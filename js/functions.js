@@ -25,17 +25,17 @@ isPalindrome();
 
 // Функция извлекает число
 
-const extractNumber = (str) => {
+const getExtractNumber = (str) => {
   str = String(str);
   str = str.replace(/\D/g, '');
   str = parseInt(str, 10);
   return (str);
 };
-extractNumber();
+getExtractNumber();
 
 //Функция Pad
 
-const padStart = (str, minLength, pad) => {
+const getPad = (str, minLength, pad) => {
   const actualPad = minLength - str.length;
   if (actualPad <= 0) {
     return str;
@@ -44,4 +44,4 @@ const padStart = (str, minLength, pad) => {
   const tempRepeat = pad.repeat(actualPad / pad.length);
   return tempPad + tempRepeat + str;
 };
-padStart();
+getPad();
