@@ -10,10 +10,18 @@ const pictureTemplate = document
 
 const similarPictures = getArrayCard();
 
+const pictureListFragment = document.createDocumentFragment();
+
 similarPictures.forEach((data) => {
   const pictureElementClone = pictureTemplate.cloneNode(true);
-  pictureElementClone.querySelector('.picture__img').src = data.url;
-  pictureElementClone.querySelector('.picture__likes').textContent = data.likes;
-  pictureElementClone.querySelector('.picture__comments').textContent = data.comments.length;
-  pictureListElement.append(pictureElementClone);
+  pictureElementClone
+    .querySelector('.picture__img').src = data.url;
+  pictureElementClone
+    .querySelector('.picture__likes').textContent = data.likes;
+  pictureElementClone
+    .querySelector('.picture__comments').textContent = data.comments.length;
+  pictureListFragment
+    .append(pictureElementClone);
 });
+
+pictureListElement.append(pictureListFragment);
