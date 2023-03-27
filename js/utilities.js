@@ -12,10 +12,13 @@ const getStringRange = (element, range) =>
   Array.from({ length: getRandomInteger(range.min, range.max) }, () =>
     getRandomArrayElement(element)).join(' ');
 
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
 export {
   getRandomInteger,
   getRandomArrayElement,
   getStringRange,
+  isEscapeKey
 };
 
 
