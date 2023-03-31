@@ -42,5 +42,5 @@ const getArrayCard = () => Array
   .map((_, counterId) => createCardPhoto(counterId + 1)
   );
 
-export { getArrayCard };
+export { getArrayCard, createComment };
 

@@ -1,8 +1,11 @@
 import {
   openUserModal,
   getInfoPicture,
-  getInfoComment
-} from './modal-fullscreen.js';
+  getInfoComment,
+  commentLoadButton,
+  commentCount,
+  commentList
+} from './fullscreen-modal.js';
 
 import { getArrayCard } from './create-card.js';
 
@@ -13,6 +16,8 @@ const pictureTemplate = document
   .querySelector('#picture')
   .content
   .querySelector('.picture');
+
+const stepComment = 5;
 
 const similarPictures = getArrayCard();
 
@@ -43,6 +48,20 @@ const onPictureListClick = (evt) => {
     const currentPicture = similarPictures.find((elem) => elem.id === Number(currentElement.dataset.id));
     getInfoPicture(currentPicture);
     getInfoComment(currentPicture);
+
+    const onLoadComments = () => {
+
+      const lengthArray = currentPicture.comments.length;
+
+      if (lengthArray <= stepComment) {
+        commentLoadButton.classList.add('hidden');
+      } else {
+        commentLoadButton.classList.remove('hidden');
+      }
+
+      commentCount.innerHTML = `Показанно ${commentList.children.length} из <span class="comments-count">${lengthArray} </span> комментариев`;
+    };
+    onLoadComments(currentPicture);
   }
 };
 
