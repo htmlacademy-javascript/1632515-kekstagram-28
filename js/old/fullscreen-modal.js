@@ -5,7 +5,7 @@ import { isEscapeKey } from './utilities.js';
 const modalElement = document.querySelector('.big-picture');
 const closeModalElement = document.querySelector('.big-picture__cancel');
 const commentCount = modalElement.querySelector('.social__comment-count');
-const commentLoad = modalElement.querySelector('.comments-loader');
+const commentLoadButton = modalElement.querySelector('.comments-loader');
 
 //ListComment
 const commentList = modalElement.querySelector('.social__comments');
@@ -21,17 +21,15 @@ const onDocumentKeydown = (evt) => {
 const openUserModal = () => {
   modalElement.classList.remove('hidden');
   document.body.classList.add('modal-open');
-  commentCount.classList.add('hidden');
-  commentLoad.classList.add('hidden');
   document.addEventListener('keydown', onDocumentKeydown);
+  // commentLoadButton.addEventListener('click', evt);
 };
 
 const closeUserModal = () => {
   modalElement.classList.add('hidden');
   document.body.classList.remove('modal-open');
-  commentCount.classList.remove('hidden');
-  commentLoad.classList.remove('hidden');
   document.removeEventListener('keydown', onDocumentKeydown);
+  // commentLoadButton.removeEventListener('click', evt);
 };
 
 closeModalElement.addEventListener('click', () => {
@@ -69,5 +67,9 @@ export {
   openUserModal,
   closeUserModal,
   getInfoPicture,
-  getInfoComment
+  getInfoComment,
+  commentLoadButton,
+  commentCount,
+  commentList,
+  commentElement,
 };

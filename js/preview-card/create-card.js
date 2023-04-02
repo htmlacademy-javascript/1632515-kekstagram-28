@@ -2,13 +2,13 @@ import {
   NAMES,
   COMMENTS,
   DESCRIPTIONS
-} from './constant.js';
+} from '../constant.js';
 
 import {
   getRandomInteger,
   getRandomArrayElement,
   getStringRange,
-} from './utilities.js';
+} from '../utilities.js';
 
 const CARD_PHOTO_AMOUNT = 25;//25
 const COMMENTS_RANGE = { min: 1, max: 3 };
@@ -42,5 +42,5 @@ const getArrayCard = () => Array
   .map((_, counterId) => createCardPhoto(counterId + 1)
   );
 
-export { getArrayCard };
+export { getArrayCard, createComment };
 
