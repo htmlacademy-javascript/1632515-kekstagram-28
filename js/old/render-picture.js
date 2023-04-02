@@ -50,7 +50,6 @@ const onPictureListClick = (evt) => {
     getInfoComment(currentPicture);
 
     const onLoadComments = () => {
-
       const lengthArray = currentPicture.comments.length;
 
       if (lengthArray <= stepComment) {

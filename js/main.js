@@ -1,9 +1,7 @@
-import { addPicture } from './render-picture.js';
-addPicture();
 
-import { } from './fullscreen-modal.js';
+import './fullscreen-modal/full-modal.js';
 
-import { uploadModal } from './upload_modal/upload-modal.js';
+import { uploadModal } from './upload-modal/upload-modal.js';
 uploadModal();
 
 
